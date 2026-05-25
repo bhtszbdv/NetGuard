@@ -1,12 +1,161 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Project\\Assignment\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Cho\\source\\NetGuard\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|c:\\users\\cho\\source\\netguard\\web development assignment\\changepassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\changepassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LearningSystemDB/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\changepassword.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\changepassword.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\admindashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\admindashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\memberdashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\memberdashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\memberdashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\memberdashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\admindashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\admindashboard.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\usermanagement.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\usermanagement.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|C:\\Users\\Cho\\source\\NetGuard\\web development assignment\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{BEC7598A-17EC-40E3-A1E1-651282246E9A}|Web Development Assignment\\Web Development Assignment.csproj|solutionrelative:web development assignment\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.Users.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LearningSystemDB/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/LearningSystemDB/True/SqlTable/dbo.Users.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-05-25T14:39:14.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminDashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\AdminDashboard.aspx.cs",
+              "RelativeDocumentMoniker": "Web Development Assignment\\AdminDashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\AdminDashboard.aspx.cs",
+              "RelativeToolTip": "Web Development Assignment\\AdminDashboard.aspx.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAADgvzoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T14:32:21.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminDashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\AdminDashboard.aspx",
+              "RelativeDocumentMoniker": "Web Development Assignment\\AdminDashboard.aspx",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\AdminDashboard.aspx",
+              "RelativeToolTip": "Web Development Assignment\\AdminDashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-05-25T14:30:26.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MemberDashboard.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\MemberDashboard.aspx.cs",
+              "RelativeDocumentMoniker": "Web Development Assignment\\MemberDashboard.aspx.cs",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\MemberDashboard.aspx.cs",
+              "RelativeToolTip": "Web Development Assignment\\MemberDashboard.aspx.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAcwNYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T14:21:07.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChangePassword.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\ChangePassword.aspx.cs",
+              "RelativeDocumentMoniker": "Web Development Assignment\\ChangePassword.aspx.cs",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\ChangePassword.aspx.cs",
+              "RelativeToolTip": "Web Development Assignment\\ChangePassword.aspx.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAwwHkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-25T14:01:36.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChangePassword.aspx",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\ChangePassword.aspx",
+              "RelativeDocumentMoniker": "Web Development Assignment\\ChangePassword.aspx",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\ChangePassword.aspx",
+              "RelativeToolTip": "Web Development Assignment\\ChangePassword.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-05-25T13:58:51.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MemberDashboard.aspx",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\MemberDashboard.aspx",
+              "RelativeDocumentMoniker": "Web Development Assignment\\MemberDashboard.aspx",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\MemberDashboard.aspx",
+              "RelativeToolTip": "Web Development Assignment\\MemberDashboard.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-05-25T14:05:21.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\Login.aspx",
+              "RelativeDocumentMoniker": "Web Development Assignment\\Login.aspx",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\Login.aspx",
+              "RelativeToolTip": "Web Development Assignment\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-05-25T13:03:22.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserManagement.aspx",
+              "DocumentMoniker": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\UserManagement.aspx",
+              "RelativeDocumentMoniker": "Web Development Assignment\\UserManagement.aspx",
+              "ToolTip": "C:\\Users\\Cho\\source\\NetGuard\\Web Development Assignment\\UserManagement.aspx",
+              "RelativeToolTip": "Web Development Assignment\\UserManagement.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-05-25T13:03:02.137Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
