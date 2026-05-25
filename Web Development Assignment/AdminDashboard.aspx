@@ -275,6 +275,10 @@
                     <i class="fa-solid fa-user-circle"></i> <span>My Profile</span>
                 </asp:LinkButton>
                 
+                <asp:LinkButton ID="btnchangepwd" runat="server" OnClick="btnchangepwd_Click" CausesValidation="false">
+                    <i class="fa-solid fa-key"></i> <span>Change Password</span>
+                </asp:LinkButton>
+
                 <asp:LinkButton ID="btnlogout" runat="server" OnClick="btnlogout_Click" CausesValidation="false">
                     <i class="fa-solid fa-sign-out-alt"></i> <span>Secure Logout</span>
                 </asp:LinkButton>

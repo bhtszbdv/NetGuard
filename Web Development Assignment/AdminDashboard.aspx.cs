@@ -45,6 +45,19 @@ namespace Web_Development_Assignment
 
         }
 
+        protected void btnchangepwd_Click(object sender, EventArgs e)
+        {
+            // Ensure the user is an Admin before redirecting
+            if (Session["UserType"] != null && Session["UserType"].ToString() == "Admin")
+            {
+                Response.Redirect("ChangePassword.aspx");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
         protected void btnlogout_Click(object sender, EventArgs e)
         {
             Session.Clear();

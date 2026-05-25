@@ -349,6 +349,10 @@
                 <asp:LinkButton ID="btnprofile" runat="server" OnClick="btnprofile_Click" CausesValidation="false">
                     <i class="fa-solid fa-user-circle"></i> <span>My Profile</span>
                 </asp:LinkButton>
+
+                <asp:LinkButton ID="btnchangepwd" runat="server" OnClick="btnchangepwd_Click" CausesValidation="false">
+                    <i class="fa-solid fa-key"></i> <span>Change Password</span>
+                </asp:LinkButton>
                 
                 <div class="menu-label">Learning Tools</div>
                 <asp:LinkButton ID="btncertifates" runat="server" OnClick="btncertifates_Click" CausesValidation="false">

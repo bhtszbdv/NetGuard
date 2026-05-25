@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AdminDashboard.aspx" />
     <Content Include="Certificates.aspx" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CourseManagement.aspx" />
     <Content Include="CoursePage.aspx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="Certificates.aspx.designer.cs">
       <DependentUpon>Certificates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

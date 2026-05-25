@@ -199,6 +199,20 @@ namespace Web_Development_Assignment
                 Response.Redirect("Login.aspx");
             }
         }
+
+        protected void btnchangepwd_Click(object sender, EventArgs e)
+        {
+            if (Session["UserType"] != null && Session["UserType"].ToString() == "Member")
+            {
+                Response.Redirect("ChangePassword.aspx");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+
         protected void OpenCourse(object sender, CommandEventArgs e)
         {
             string courseID = e.CommandArgument.ToString();
