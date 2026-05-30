@@ -1,0 +1,56 @@
+Jay 
+
+Login (include form validation for username and password) 
+
+Create account (for regular users) 
+
+Homepage (for regular user to see dashboard and modules enrolled and resources) 
+
+Homepage (for admin use) 
+
+Course pages for a specific module to display resources and available quizzes. 
+
+ 
+
+ 
+
+Sirin 
+
+Notes for Course Page (Course Content) 
+
+Virtual Lab 
+
+
+Self-Assessments 
+
+Feedback Page 
+
+Certificate/Completion Page 
+
+ 
+
+Amber 
+
+Discussions Page 
+
+Change password for user (password reset/forgot password) 
+
+Contact us page 
+
+FAQ Page 
+
+Notification Page 
+
+ 
+
+Cho 
+
+User profile settings page 
+
+Admin page for user management (add, update, delete user) 
+
+Admin page for course management (add, update, delete course) 
+
+Change password for user and admin 
+
+Quiz page 

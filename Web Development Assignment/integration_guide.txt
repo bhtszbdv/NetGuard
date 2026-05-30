@@ -1,0 +1,105 @@
+========================================================================
+INTEGRATION & FILE STRUCTURE GUIDE FOR TEAM LEADER
+========================================================================
+
+This document details the file structure of the Python and Cybersecurity module pages,
+their dependencies, and clear instructions on how the Team Leader can merge this 
+implementation with their master project codebase.
+
+------------------------------------------------------------------------
+1. MY ASSIGNED COURSE FILES (FILES TO MERGE)
+------------------------------------------------------------------------
+These are the files that contain the customized implementation for the Python 
+and Cybersecurity modules:
+
+- CoursePage.aspx / CoursePage.aspx.cs / CoursePage.aspx.designer.cs
+  * Purpose: The interactive lesson framework, labs, quiz, and discussion page 
+    for the "Introduction Python Programming" module (Course ID: 5).
+  
+- CyberSecurityPage.aspx / CyberSecurityPage.aspx.cs / CyberSecurityPage.aspx.designer.cs
+  * Purpose: The interactive lesson framework, labs, quiz, and discussion page 
+    for the "Cybersecurity Basics" module (Course ID: 1).
+
+- ProgressHandler.ashx / ProgressHandler.ashx.cs
+  * Purpose: Central API handler. Manages database progress saving/loading, 
+    quiz tracking, discussion comments loading/saving, and auto-seeding.
+
+- setup_database.sql
+  * Purpose: Relational schema creation and database seeds. Includes table schemas 
+    for UserCourseProgress, QuizAttempts, QuizAnswers, and Discussions.
+
+------------------------------------------------------------------------
+2. FILE STRUCTURE & RELATIONSHIPS
+------------------------------------------------------------------------
+The components connect as follows:
+
+                        [ MemberDashboard.aspx ]
+                                   │
+                    Redirects via course selection
+                                   ▼
+          ┌────────────────────────┴────────────────────────┐
+          ▼ (CourseID=5)                                    ▼ (CourseID=1)
+ [ CoursePage.aspx (Python) ]            [ CyberSecurityPage.aspx (Cyber) ]
+          │                                                 │
+          └────────────────────────┬────────────────────────┘
+                       Asynchronous JSON Requests
+                                   ▼
+                       [ ProgressHandler.ashx ]
+                                   │
+                   Queries & Inserts using ADO.NET
+                                   ▼
+                    [ LocalDB: LearningSystemDB ]
+           (UserCourseProgress, QuizAttempts, QuizAnswers, Discussions)
+
+------------------------------------------------------------------------
+3. CURRENT CONNECTIONS (HOW IT WORKS)
+------------------------------------------------------------------------
+- Dashboard Integration:
+  * MemberDashboard.aspx.cs uses OpenCourse() to route to:
+    - "CyberSecurityPage.aspx?CourseID=1" for Cybersecurity Basics.
+    - "CoursePage.aspx?CourseID=5" for Python Programming.
+- State Persistence:
+  * AJAX requests fetch progress status and discussion messages from ProgressHandler.ashx
+    on page load and save changes as they happen.
+- Fallback caching:
+  * If the database is offline or not configured, the frontend automatically falls 
+    back to localStorage so that the pages remain fully functional.
+
+------------------------------------------------------------------------
+4. WHERE IT DOES NOT CONNECT / MERGING INSTRUCTIONS (FOR TEAM LEADER)
+------------------------------------------------------------------------
+When integrating this with the master project, the Team Leader must pay attention 
+to the following areas:
+
+[A] Database Schema Merging:
+    - The Leader should execute the SQL statements from `setup_database.sql` to add 
+      the following tables to the master database:
+      1. `UserCourseProgress` (tracks completed modules)
+      2. `QuizAttempts` (tracks remaining attempt counts per user)
+      3. `QuizAnswers` (persists individual quiz answers and performance stats)
+      4. `Discussions` (stores discussion forum posts)
+    - If the Leader already has a table for course progress or forum posts, they 
+      will need to point the SQL queries in `ProgressHandler.ashx.cs` to their tables.
+
+[B] Session Variable Alignment:
+    - ProgressHandler.ashx.cs checks: `ctx.Session["Username"]` to identify the user.
+    - CoursePage.aspx & CyberSecurityPage.aspx read: `Session["Username"]` and `Session["UserType"]`.
+    - If the Leader uses a different session variable key (e.g. `Session["UserID"]` 
+      or `Session["LoginUser"]`), they must search and replace these in:
+      * ProgressHandler.ashx.cs (ProcessRequest, HandleSaveQuiz, etc.)
+      * CoursePage.aspx (inside the `<script>` tag at the bottom)
+      * CyberSecurityPage.aspx (inside the `<script>` tag at the bottom)
+
+[C] Connection String Compatibility:
+    - The code fetches the database connection string named "DBConnection" from Web.config.
+    - The Leader must ensure their `Web.config` has:
+      `<add name="DBConnection" connectionString="..." providerName="System.Data.SqlClient"/>`
+      or modify `ConnStr` in `ProgressHandler.ashx.cs` and dashboard files to match their key name.
+
+[D] Navigation and Sidebar Links:
+    - The header navbar redirects back to:
+      * `MemberDashboard.aspx` (Dashboard)
+      * `Login.aspx` (Logout)
+      * `Feedback.aspx` (Course Feedback link in course menu)
+    - If the Leader has changed the dashboard or feedback file names, they must update these 
+      URLs inside `CoursePage.aspx` and `CyberSecurityPage.aspx` HTML sections.

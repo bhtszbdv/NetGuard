@@ -202,7 +202,37 @@ namespace Web_Development_Assignment
         protected void OpenCourse(object sender, CommandEventArgs e)
         {
             string courseID = e.CommandArgument.ToString();
-            Response.Redirect("CoursePage.aspx?CourseID=" + courseID);
+
+            // Get course title to determine which page to load
+            SqlConnection conn = new SqlConnection(connStr);
+            string query = "SELECT CourseTitle FROM Courses WHERE CourseID=@CourseID";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@CourseID", courseID);
+
+            conn.Open();
+            object result = cmd.ExecuteScalar();
+            conn.Close();
+
+            // Debug: Check what we got
+            System.Diagnostics.Debug.WriteLine("Course Title: " + (result != null ? result.ToString() : "NULL"));
+
+            // Route to the appropriate course page based on course title
+            if (result != null)
+            {
+                string courseTitle = result.ToString().Trim();
+                if (courseTitle.Equals("CyberSecurity Basics", StringComparison.OrdinalIgnoreCase))
+                {
+                    Response.Redirect("CyberSecurityPage.aspx?CourseID=" + courseID);
+                }
+                else
+                {
+                    Response.Redirect("CoursePage.aspx?CourseID=" + courseID);
+                }
+            }
+            else
+            {
+                Response.Redirect("CoursePage.aspx?CourseID=" + courseID);
+            }
         }
 
         protected void rptmycourses_ItemCommand(object source, RepeaterCommandEventArgs e)

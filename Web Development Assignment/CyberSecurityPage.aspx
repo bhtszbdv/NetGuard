@@ -1,9 +1,9 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CoursePage.aspx.cs" Inherits="Web_Development_Assignment.CoursePage" ResponseEncoding="UTF-8" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CyberSecurityPage.aspx.cs" Inherits="Web_Development_Assignment.CyberSecurityPage" ResponseEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>Introduction to Python Programming - NetGuard</title>
+    <title>CyberSecurity Basics - NetGuard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         :root {
@@ -328,7 +328,7 @@
         .sb-brand-name{font-size:15px;font-weight:700;color:#fff;letter-spacing:.3px;line-height:1.2;}
         .sb-brand-sub{font-size:11px;color:#6b7280;margin-top:2px;}
 
-        /* ══ PYTHON COURSE BADGE ══ */
+        /* ══ CYBERSECURITY COURSE BADGE ══ */
         .course-lang-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,153,255,.1);border:1px solid rgba(0,153,255,.22);border-radius:6px;padding:3px 9px;font-size:11px;font-weight:700;color:var(--primary);margin-top:8px;letter-spacing:.3px;}
 
         /* ══ TOPBAR USER CHIP ══ */
@@ -373,7 +373,7 @@
             <asp:Button ID="btnback" runat="server" OnClick="btnback_Click" CausesValidation="false" style="display:none;" />
         </div>
         <div class="sb-top">
-            <div class="sb-title"><asp:Label ID="lblCourseTitle" runat="server" Text="Introduction to Python Programming"></asp:Label></div>
+            <div class="sb-title"><asp:Label ID="lblCourseTitle" runat="server" Text="CyberSecurity Basics"></asp:Label></div>
             <div class="op-row"><span class="op-lbl">Progress</span><span class="op-pct" id="opPct">0%</span></div>
             <div class="op-bar"><div class="op-fill" id="opFill" style="width:0%"></div></div>
         </div>
@@ -382,15 +382,14 @@
             <!-- Module 1 -->
             <div class="mg" id="mod1">
                 <div class="mh" onclick="toggleMod('mod1')">
-                    <span class="mn">Module 1: Python Fundamentals</span>
-                    <em class="mc" id="m1c">0 / 4</em>
+                    <span class="mn">Module 1: Foundations &amp; Threats</span>
+                    <em class="mc" id="m1c">0 / 3</em>
                     <i class="fa-solid fa-chevron-down mchev"></i>
                 </div>
                 <div class="ml">
-                    <div class="li active" id="li-notes" onclick="go(this,'notes')"><div class="ls" id="st-notes"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Introduction &amp; Setup</div></div><span class="li-dur">15 min</span></div>
-                    <div class="li" id="li-vars"  onclick="go(this,'vars')"> <div class="ls" id="st-vars"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Variables &amp; Data Types</div></div><span class="li-dur">18 min</span></div>
-                    <div class="li" id="li-flow"  onclick="go(this,'flow')"> <div class="ls" id="st-flow"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Control Flow &amp; Loops</div></div><span class="li-dur">20 min</span></div>
-                    <div class="li" id="li-func"  onclick="go(this,'func')"> <div class="ls" id="st-func"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Functions &amp; Modules</div></div><span class="li-dur">22 min</span></div>
+                    <div class="li active" id="li-intro" onclick="go(this,'intro')"><div class="ls" id="st-intro"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Foundations &amp; Threats</div></div><span class="li-dur">15 min</span></div>
+                    <div class="li" id="li-auth"  onclick="go(this,'auth')"> <div class="ls" id="st-auth"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Authentication &amp; Encryption</div></div><span class="li-dur">18 min</span></div>
+                    <div class="li" id="li-best"  onclick="go(this,'best')"> <div class="ls" id="st-best"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Security Best Practices</div></div><span class="li-dur">20 min</span></div>
                 </div>
             </div>
             <!-- Module 2 -->
@@ -401,7 +400,7 @@
                     <i class="fa-solid fa-chevron-down mchev"></i>
                 </div>
                 <div class="ml">
-                    <div class="li" id="li-labs" onclick="go(this,'labs')"><div class="ls" id="st-labs"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Virtual Lab &mdash; Python IDE</div></div><span class="li-dur">30 min</span></div>
+                    <div class="li" id="li-labs" onclick="go(this,'labs')"><div class="ls" id="st-labs"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Interactive Sandbox &mdash; Security Labs</div></div><span class="li-dur">30 min</span></div>
                     <div class="li" id="li-quiz" onclick="go(this,'quiz')"><div class="ls" id="st-quiz"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Self-Assessment Quiz</div></div><span class="li-dur">20 min</span></div>
                     <div class="li" id="li-disc" onclick="go(this,'disc')"><div class="ls" id="st-disc"><i class="fa-solid fa-check"></i></div><div class="li-info"><div class="li-name">Discussion Forum</div></div><span class="li-dur">Open</span></div>
                 </div>
@@ -423,9 +422,9 @@
     <!-- ═══ MAIN ═══ -->
     <div class="main">
         <div class="topbar">
-            <span class="tb-title" id="tbTitle">1.0: Introduction &amp; Setup</span>
+            <span class="tb-title" id="tbTitle">1.0: Foundations &amp; Threats</span>
             <div class="tb-right">
-                <span class="tb-comp" id="tbComp">0 of 7 completed</span>
+                <span class="tb-comp" id="tbComp">0 of 6 completed</span>
                 <span class="tb-save-ind" id="tbSaveInd"></span>
                 <div class="um-wrap" id="userMenuWrap">
                     <div class="tb-user" id="tbUser" onclick="toggleUserMenu()">
@@ -461,11 +460,11 @@
 
         <div class="scroll" id="mainScroll">
 
-            <!-- ── 1.0 Notes ── -->
-            <div id="panel-notes" class="np">
-                <div id="bn-notes"></div>
-                <div class="lhdr"><h1>Introduction to Python Programming</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 15 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Beginner</div></div>
-                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Understand what Python is and where it is used</li><li>Install Python and run your first script</li><li>Write and execute a "Hello, World!" program</li><li>Understand the Python interpreter and REPL</li></ul></div>
+            <!-- ── 1.0 Foundations & Threats ── -->
+            <div id="panel-intro" class="np">
+                <div id="bn-intro"></div>
+                <div class="lhdr"><h1>Foundations &amp; Threats</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 15 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Beginner</div></div>
+                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Understand core cybersecurity concepts and the CIA Triad</li><li>Recognize common threat vectors and malware types</li><li>Learn how vulnerabilities are exploited by threat actors</li><li>Understand why proactive security measures are crucial</li></ul></div>
 
                 <!-- Video Lecture -->
                 <div style="margin-bottom:26px;">
@@ -473,108 +472,64 @@
                         <div class="si"><i class="fa-brands fa-youtube"></i></div> Video Lecture
                     </h2>
                     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.12);">
-                        <iframe src="https://www.youtube.com/embed/rfscVS0vtbw"
-                                title="Learn Python - Full Course for Beginners"
+                        <iframe src="https://www.youtube.com/embed/zYLkdT731x8"
+                                title="Introduction to Cybersecurity"
                                 style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                     </div>
-                    <p style="font-size:13px;color:var(--muted);margin-top:8px;"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> <strong>Learn Python – Full Course for Beginners</strong> &nbsp;&middot;&nbsp; freeCodeCamp.org &nbsp;&middot;&nbsp; 4.5 hrs</p>
+                    <p style="font-size:13px;color:var(--muted);margin-top:8px;"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> <strong>Cybersecurity Basics Tutorial</strong> &nbsp;&middot;&nbsp; Simply Learn &nbsp;&middot;&nbsp; 12 mins</p>
                 </div>
 
-                <div class="ns"><h2><div class="si"><i class="fa-brands fa-python"></i></div> What is Python?</h2>
-                <p>Python is a high-level, general-purpose programming language created by <strong>Guido van Rossum</strong> in 1991. It is known for its simple, readable syntax and is one of the most beginner-friendly languages available today. Python is used across web development, data science, AI, automation, and cybersecurity.</p>
-                <div class="ig"><div class="ic"><div class="ict">Created</div><div class="icv">1991</div><div class="icd">Guido van Rossum</div></div><div class="ic"><div class="ict">Paradigm</div><div class="icv">Multi</div><div class="icd">OOP, procedural, functional</div></div><div class="ic"><div class="ict">Extension</div><div class="icv">.py</div><div class="icd">Python source files</div></div><div class="ic"><div class="ict">Version</div><div class="icv">3.x</div><div class="icd">Current stable branch</div></div></div></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-terminal"></i></div> Your First Program</h2>
-                <div class="cb"><span class="cl">Python</span><pre><span class="cm"># My first Python program</span>
-<span class="fn">print</span>(<span class="st">"Hello, World!"</span>)
-<span class="fn">print</span>(<span class="nm">42</span>)
-<span class="fn">print</span>(<span class="nm">10</span> + <span class="nm">5</span>)  <span class="cm"># Output: 15</span></pre></div>
-                <div class="tip"><strong><i class="fa-solid fa-lightbulb" style="color:var(--amber);"></i> Tip:</strong><p>Python uses indentation to define code blocks — not curly braces. Consistent indentation is <em>required</em>.</p></div></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-comment"></i></div> Comments</h2>
-                <div class="cb"><span class="cl">Python</span><pre><span class="cm"># Single-line comment</span>
-<span class="st">"""Multi-line comment"""</span>
-<span class="fn">print</span>(<span class="st">"Comments are ignored by Python"</span>)</pre></div></div>
+                <div class="ns"><h2><div class="si"><i class="fa-solid fa-shield-halved"></i></div> What is Cybersecurity?</h2>
+                <p>Cybersecurity is the discipline and practice of securing computers, servers, mobile devices, electronic systems, networks, and data from unauthorized access, modification, or malicious digital attacks. Modern environments rely on three core principles collectively known as the <strong>CIA Triad</strong>.</p>
+                <div class="ig"><div class="ic"><div class="ict">Confidentiality</div><div class="icv">Encryption</div><div class="icd">Keep data hidden from unauthorized eyes</div></div><div class="ic"><div class="ict">Integrity</div><div class="icv">Hashing</div><div class="icd">Ensure data is accurate and untampered</div></div><div class="ic"><div class="ict">Availability</div><div class="icv">Redundancy</div><div class="icd">Keep resources up and fully functional</div></div><div class="ic"><div class="ict">Core Goal</div><div class="icv">Risk Mitigation</div><div class="icd">Minimize threat exposure and impact</div></div></div></div>
+                <div class="ns"><h2><div class="si"><i class="fa-solid fa-skull-crossbones"></i></div> Common Cybersecurity Threats</h2>
+                <div class="cb"><span class="cl">Attack Types</span><pre><span class="cm"># 1. Phishing: Deceptive emails mimicking legitimate institutions</span>
+<span class="fn">Malware</span> = ["Ransomware", "Spyware", "Adware", "Trojan"]
+<span class="cm"># 2. DDoS: Overwhelming online services with synthetic traffic</span>
+<span class="fn">SQL_Injection</span> = "Inserting malicious payload inside inputs to dump databases"</pre></div>
+                <div class="tip"><strong><i class="fa-solid fa-lightbulb" style="color:var(--amber);"></i> Pro Tip:</strong><p>Security is only as strong as its weakest link. In most corporate and personal setups, the human element is targeted first via social engineering.</p></div></div>
             </div>
 
-            <!-- ── 1.1 Variables ── -->
-            <div id="panel-vars" class="np" style="display:none;">
-                <div id="bn-vars"></div>
-                <div class="lhdr"><h1>Variables &amp; Data Types</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 18 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Beginner</div></div>
-                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Declare and assign variables in Python</li><li>Understand Python's core data types</li><li>Use type conversion between types</li><li>Understand dynamic typing</li></ul></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-box"></i></div> Variables</h2>
-                <p>A variable is a named container for data. Python determines the type automatically — no explicit declaration needed (dynamic typing).</p>
-                <div class="cb"><span class="cl">Python</span><pre>name = <span class="st">"Alice"</span>
-age = <span class="nm">25</span>
-height = <span class="nm">1.68</span>
-is_student = <span class="bl">True</span>
-
-<span class="fn">print</span>(name)       <span class="cm"># Alice</span>
-<span class="fn">print</span>(<span class="fn">type</span>(age))   <span class="cm"># &lt;class 'int'&gt;</span></pre></div></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-list"></i></div> Core Data Types</h2>
-                <div class="ig"><div class="ic"><div class="ict">int</div><div class="icv">42</div><div class="icd">Whole numbers</div></div><div class="ic"><div class="ict">float</div><div class="icv">3.14</div><div class="icd">Decimal numbers</div></div><div class="ic"><div class="ict">str</div><div class="icv">"Hello"</div><div class="icd">Text</div></div><div class="ic"><div class="ict">bool</div><div class="icv">True/False</div><div class="icd">Boolean</div></div><div class="ic"><div class="ict">list</div><div class="icv">[1, 2, 3]</div><div class="icd">Ordered, mutable</div></div><div class="ic"><div class="ict">dict</div><div class="icv">{"k": v}</div><div class="icd">Key-value pairs</div></div></div>
-                <div class="cb"><span class="cl">Python</span><pre>x = <span class="st">"100"</span>
-y = <span class="fn">int</span>(x)    <span class="cm"># string → int: 100</span>
-
-name = <span class="st">"Bob"</span>
-age = <span class="nm">30</span>
-<span class="fn">print</span>(<span class="st">f"Name: {name}, Age: {age}"</span>)</pre></div></div>
+            <!-- ── 1.1 Authentication & Encryption ── -->
+            <div id="panel-auth" class="np" style="display:none;">
+                <div id="bn-auth"></div>
+                <div class="lhdr"><h1>Authentication &amp; Encryption</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 18 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Beginner</div></div>
+                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Understand the difference between authentication and authorization</li><li>Implement Multi-Factor Authentication (MFA)</li><li>Differentiate between Symmetric and Asymmetric encryption</li><li>Understand key distribution and hashing functions</li></ul></div>
+                <div class="ns"><h2><div class="si"><i class="fa-solid fa-key"></i></div> Authentication vs. Authorization</h2>
+                <p>Authentication confirms <strong>who you are</strong> (using credentials, biometrics, tokens). Authorization determines <strong>what you are permitted to do</strong> (using read/write permissions, access lists).</p>
+                <div class="cb"><span class="cl">Authentication Verification</span><pre><span class="kw">def</span> <span class="fn">verify_user</span>(user_pwd, stored_hash):
+    <span class="kw">return</span> <span class="fn">hash_function</span>(user_pwd) == stored_hash <span class="cm"># Verify credentials securely</span></pre></div></div>
+                <div class="ns"><h2><div class="si"><i class="fa-solid fa-lock"></i></div> Symmetric &amp; Asymmetric Encryption</h2>
+                <div class="ig"><div class="ic"><div class="ict">Symmetric</div><div class="icv">AES / DES</div><div class="icd">Same single key for locking and unlocking</div></div><div class="ic"><div class="ict">Asymmetric</div><div class="icv">RSA / ECC</div><div class="icd">Public key encrypts, Private key decrypts</div></div><div class="ic"><div class="ict">Hashing</div><div class="icv">SHA-256</div><div class="icd">One-way conversion to check data integrity</div></div><div class="ic"><div class="ict">MFA</div><div class="icv">OTP / Bio</div><div class="icd">Requires 2+ independent factors to login</div></div></div>
+                <div class="cb"><span class="cl">Encryption Example</span><pre>plaintext = <span class="st">"SecretData"</span>
+encrypted = <span class="fn">encrypt</span>(plaintext, public_key)
+decrypted = <span class="fn">decrypt</span>(encrypted, private_key)
+<span class="fn">print</span>(decrypted) <span class="cm"># Output: SecretData</span></pre></div></div>
             </div>
 
-            <!-- ── 1.2 Control Flow ── -->
-            <div id="panel-flow" class="np" style="display:none;">
-                <div id="bn-flow"></div>
-                <div class="lhdr"><h1>Control Flow &amp; Loops</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 20 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Beginner</div></div>
-                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Write if / elif / else statements</li><li>Use for loops to iterate over sequences</li><li>Use while loops with conditions</li><li>Apply break, continue, and range()</li></ul></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-code-branch"></i></div> Conditionals</h2>
-                <div class="cb"><span class="cl">Python</span><pre>score = <span class="nm">75</span>
-<span class="kw">if</span> score >= <span class="nm">90</span>:
-    <span class="fn">print</span>(<span class="st">"Grade: A"</span>)
-<span class="kw">elif</span> score >= <span class="nm">75</span>:
-    <span class="fn">print</span>(<span class="st">"Grade: B"</span>)
+            <!-- ── 1.2 Security Best Practices ── -->
+            <div id="panel-best" class="np" style="display:none;">
+                <div id="bn-best"></div>
+                <div class="lhdr"><h1>Security Best Practices</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 20 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Intermediate</div></div>
+                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Understand the Principle of Least Privilege (PoLP)</li><li>Enforce password complexity standards and use password managers</li><li>Implement Defense in Depth layered architecture</li><li>Understand patch management and security updates</li></ul></div>
+                <div class="ns"><h2><div class="si"><i class="fa-solid fa-user-shield"></i></div> Principle of Least Privilege</h2>
+                <p>Always grant users and processes the minimum necessary permissions required to perform their specific tasks. This drastically reduces the attack surface and damage when accounts are compromised.</p>
+                <div class="cb"><span class="cl">Access Rule</span><pre>user_role = <span class="st">"guest"</span>
+<span class="kw">if</span> user_role == <span class="st">"admin"</span>:
+    <span class="fn">grant_full_system_access</span>()
 <span class="kw">else</span>:
-    <span class="fn">print</span>(<span class="st">"Grade: F"</span>)</pre></div></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-repeat"></i></div> Loops</h2>
-                <div class="cb"><span class="cl">Python</span><pre><span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">5</span>):      <span class="cm"># 0 1 2 3 4</span>
-    <span class="fn">print</span>(i)
-
-count = <span class="nm">0</span>
-<span class="kw">while</span> count < <span class="nm">3</span>:
-    <span class="fn">print</span>(<span class="st">f"Count: {count}"</span>)
-    count += <span class="nm">1</span></pre></div>
-                <div class="tip"><strong><i class="fa-solid fa-lightbulb" style="color:var(--amber);"></i> break &amp; continue:</strong><p>Use <code style="background:#fff3cd;padding:1px 5px;border-radius:3px;">break</code> to exit a loop early. Use <code style="background:#fff3cd;padding:1px 5px;border-radius:3px;">continue</code> to skip the current iteration.</p></div></div>
-            </div>
-
-            <!-- ── 1.3 Functions ── -->
-            <div id="panel-func" class="np" style="display:none;">
-                <div id="bn-func"></div>
-                <div class="lhdr"><h1>Functions &amp; Modules</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 22 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-signal"></i> Intermediate</div></div>
-                <div class="lobj"><h3><i class="fa-solid fa-bullseye"></i>&nbsp; Learning Objectives</h3><ul><li>Define and call reusable functions with def</li><li>Use parameters, defaults, and return values</li><li>Import standard Python modules</li><li>Understand local vs global scope</li></ul></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-puzzle-piece"></i></div> Defining Functions</h2>
-                <div class="cb"><span class="cl">Python</span><pre><span class="kw">def</span> <span class="fn">greet</span>(name=<span class="st">"World"</span>):
-    <span class="kw">return</span> <span class="st">f"Hello, {name}!"</span>
-
-<span class="fn">print</span>(<span class="fn">greet</span>())          <span class="cm"># Hello, World!</span>
-<span class="fn">print</span>(<span class="fn">greet</span>(<span class="st">"Alice"</span>))  <span class="cm"># Hello, Alice!</span>
-
-<span class="kw">def</span> <span class="fn">min_max</span>(nums):
-    <span class="kw">return</span> <span class="fn">min</span>(nums), <span class="fn">max</span>(nums)
-
-lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class="nm">1</span>, <span class="nm">8</span>])
-<span class="fn">print</span>(lo, hi)   <span class="cm"># 1 8</span></pre></div></div>
-                <div class="ns"><h2><div class="si"><i class="fa-solid fa-cubes"></i></div> Importing Modules</h2>
-                <div class="cb"><span class="cl">Python</span><pre><span class="kw">import</span> math, random
-<span class="fn">print</span>(math.<span class="fn">sqrt</span>(<span class="nm">16</span>))           <span class="cm"># 4.0</span>
-<span class="fn">print</span>(random.<span class="fn">randint</span>(<span class="nm">1</span>,<span class="nm">10</span>))   <span class="cm"># random 1-10</span>
-
-<span class="kw">from</span> math <span class="kw">import</span> factorial
-<span class="fn">print</span>(<span class="fn">factorial</span>(<span class="nm">5</span>))   <span class="cm"># 120</span></pre></div></div>
+    <span class="fn">restrict_to_read_only</span>()</pre></div></div>
+                <div class="ns"><h2><div class="si"><i class="fa-solid fa-cubes"></i></div> Defense in Depth</h2>
+                <p>Never rely on a single layer of security. Effective security requires multiple defensive measures spread across different layers (Physical, Perimeter, Network, Host, Application, Data).</p>
+                <div class="tip"><strong><i class="fa-solid fa-lightbulb" style="color:var(--amber);"></i> Password Policy Rules:</strong><p>Enforce minimum length of 12+ characters, inclusion of numbers, uppercase and lowercase characters, symbols, and prohibit dictionary words.</p></div></div>
             </div>
 
             <!-- ── 2.0 Labs ── -->
             <div id="panel-labs" class="pp" style="display:none;">
                 <div id="bn-labs"></div>
-                <div class="lhdr"><h1>Virtual Lab &mdash; Python Exercises</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 30 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-flask"></i> 6 Exercises</div></div>
+                <div class="lhdr"><h1>Interactive Sandbox &mdash; Security Labs</h1><div class="lmeta"><i class="fa-solid fa-clock"></i> 30 min &nbsp;&middot;&nbsp; <i class="fa-solid fa-flask"></i> 6 Exercises</div></div>
 
                 <!-- Exercise wrapper -->
                 <div id="labWrap" class="lab-wrap">
@@ -589,8 +544,8 @@ lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class
                         <div class="lab-hint" id="labHint"></div>
                     </div>
 
-                    <div class="lab-code-lbl"><i class="fa-solid fa-code" style="color:var(--primary);"></i> Your Code</div>
-                    <textarea class="lab-code-area" id="labCodeArea" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="# Type your Python code here..."></textarea>
+                    <div class="lab-code-lbl"><i class="fa-solid fa-terminal" style="color:var(--primary);"></i> Your Command / Code</div>
+                    <textarea class="lab-code-area" id="labCodeArea" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="# Type your answer here..."></textarea>
 
                     <!-- Status banner -->
                     <div class="lab-status" id="labStatus" style="display:none;"></div>
@@ -616,7 +571,7 @@ lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class
                 <!-- Done screen -->
                 <div id="labDone" style="display:none;">
                     <div class="lab-done-card">
-                        <div class="lab-done-ico"><i class="fa-solid fa-flask" style="font-size:50px;color:var(--primary);"></i></div>
+                        <div class="lab-done-ico"><i class="fa-solid fa-shield-halved" style="font-size:50px;color:var(--primary);"></i></div>
                         <h2>Lab Complete!</h2>
                         <div class="lab-score-b" id="labDoneScore"></div>
                         <p id="labDoneMsg"></p>
@@ -666,7 +621,7 @@ lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class
                         <h2>Quiz Locked</h2>
                         <p>You have used all 3 attempts without passing. The correct answers and explanations are shown below.</p>
                         <div class="q-locked-score" id="qLockedScore"><i class="fa-solid fa-chart-bar"></i> Best Score: &mdash;</div>
-                        <button type="button" class="q-review-btn" onclick="switchLesson(document.getElementById('li-notes'),'notes')"><i class="fa-solid fa-book-open"></i> Review Course Notes</button>
+                        <button type="button" class="q-review-btn" onclick="switchLesson(document.getElementById('li-intro'),'intro')"><i class="fa-solid fa-book-open"></i> Review Course Notes</button>
                     </div>
                     <div class="qr-bd" id="answerKeyBd" style="margin-top:20px;text-align:left;"></div>
                 </div>
@@ -708,32 +663,32 @@ lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class
 
             <!-- ── 2.2 Discussion ── -->
             <div id="panel-disc" class="dp" style="display:none;">
-                <div class="lhdr"><h1>Discussion Forum</h1><div class="lmeta"><i class="fa-solid fa-users"></i> <span id="discCnt">4</span> posts &nbsp;&middot;&nbsp; Python Programming</div></div>
+                <div class="lhdr"><h1>Discussion Forum</h1><div class="lmeta"><i class="fa-solid fa-users"></i> <span id="discCnt">4</span> posts &nbsp;&middot;&nbsp; Cybersecurity Basics</div></div>
                 <div class="dpost">
-                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">JR</div><div class="pm"><div class="pa">Jamie R.</div><div class="pt">2 hours ago</div></div></div>
-                    <div class="pb"><p>Hey! I'm struggling to understand the difference between a <code>list</code> and a <code>tuple</code>. Can anyone help?</p></div>
-                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>4</span></button></div>
-                    <div class="preps"><div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">SP</div><div class="rbub"><div class="ra">Sam P. &middot; 1 hour ago</div><p>A <code>list</code> is <strong>mutable</strong> (changeable after creation), a <code>tuple</code> is <strong>immutable</strong> (fixed). Use list for changing data: <code>colors = ["red","blue"]</code>. Use tuple for fixed data: <code>coords = (10, 20)</code>.</p></div></div></div>
+                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">AL</div><div class="pm"><div class="pa">Alex</div><div class="pt">2 hours ago</div></div></div>
+                    <div class="pb"><p>Welcome to the Cybersecurity Basics discussion forum! Let's use this space to ask questions about threats and defense strategies.</p></div>
+                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>5</span></button></div>
                 </div>
                 <div class="dpost">
-                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#22c55e,#16a34a);">LN</div><div class="pm"><div class="pa">Lina</div><div class="pt">25 minutes ago</div></div></div>
-                    <div class="pb"><p>Why do I get an IndentationError in Python? The lines look completely aligned in my editor.</p></div>
-                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>2</span></button></div>
-                    <div class="preps"><div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">AD</div><div class="rbub"><div class="ra">admin <span style="background:#dbeafe;color:#1e40af;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700;">STAFF</span> &middot; 10 minutes ago</div><p>IndentationErrors are usually caused by mixing tabs and spaces in your code. Python treats tabs and spaces differently. Configure your code editor to insert spaces when you press Tab!</p></div></div></div>
+                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#22c55e,#16a34a);">LN</div><div class="pm"><div class="pa">Lina</div><div class="pt">5 hours ago</div></div></div>
+                    <div class="pb"><p>Does anyone have a good explanation of the difference between symmetric and asymmetric encryption?</p></div>
+                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>12</span></button></div>
+                    <div class="preps"><div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">AD</div><div class="rbub"><div class="ra">admin &middot; 4 hours ago</div><p>Sure Lina! Symmetric encryption uses the same key for both encryption and decryption, whereas asymmetric encryption uses a public-private key pair.</p></div></div></div>
                 </div>
                 <div class="dpost">
-                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#22c55e,#16a34a);">MK</div><div class="pm"><div class="pa">Maya K.</div><div class="pt">5 hours ago</div></div></div>
-                    <div class="pb"><p>Pro tip: use the Python REPL (type <code>python</code> in terminal) to test snippets instantly without creating a file. It's like a calculator for Python!</p></div>
-                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>11</span></button></div>
+                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#f59e0b,#d97706);">SP</div><div class="pm"><div class="pa">Sam P.</div><div class="pt">Yesterday</div></div></div>
+                    <div class="pb"><p>Remember: Multi-Factor Authentication (MFA) adds an extra verification layer. Even if someone steals your password, they can't access your account without your secondary device or biometrics!</p></div>
+                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>8</span></button></div>
                 </div>
                 <div class="dpost">
-                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#f59e0b,#d97706);">CL</div><div class="pm"><div class="pa">Chris L.</div><div class="pt">Yesterday</div></div></div>
-                    <div class="pb"><p>F-strings are incredibly powerful. You can put expressions inside: <code>print(f"2+2={2+2}")</code> outputs <code>2+2=4</code>. Much cleaner than old string formatting!</p></div>
-                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>7</span></button></div>
+                    <div class="ph"><div class="pav" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">DN</div><div class="pm"><div class="pa">Daniel</div><div class="pt">30 minutes ago</div></div></div>
+                    <div class="pb"><p>Is it secure to store user passwords in a database using MD5 hashing?</p></div>
+                    <div class="pacts"><button type="button" class="pab" onclick="toggleLike(this)"><i class="fa-regular fa-thumbs-up"></i> <span>3</span></button></div>
+                    <div class="preps"><div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">AD</div><div class="rbub"><div class="ra">admin <span style="background:#dbeafe;color:#1e40af;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700;">STAFF</span> &middot; 15 minutes ago</div><p>No, MD5 is cryptographically broken and highly vulnerable to collision attacks and brute-forcing. Always use secure, modern salted algorithms like bcrypt or PBKDF2.</p></div></div></div>
                 </div>
                 <div class="npbox">
                     <h3><i class="fa-solid fa-pen-to-square" style="color:var(--primary);"></i> Post a Reply</h3>
-                    <textarea id="newPost" placeholder="Share a question, tip, or insight about Python..."></textarea>
+                    <textarea id="newPost" placeholder="Share a question, tip, or insight about Cybersecurity..."></textarea>
                     <div class="psr"><button type="button" class="psub" onclick="submitPost()"><i class="fa-solid fa-paper-plane"></i> Post</button></div>
                 </div>
             </div>
@@ -754,11 +709,11 @@ lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class
                 <div class="cert-lk-card">
                     <div class="clk-ico"><i class="fa-solid fa-lock"></i></div>
                     <h2>Certificate Locked</h2>
-                    <p>Complete all requirements below to earn your official NetGuard Python Programming certificate.</p>
+                    <p>Complete all requirements below to earn your official NetGuard Cybersecurity Basics certificate.</p>
                     <ul class="req-list">
                         <li class="req-li">
                             <div class="req-ico pend" id="req-lessons-ico"><i class="fa-solid fa-check"></i></div>
-                            <div><strong>Complete all course lessons</strong><br/><span id="req-lessons-txt" style="font-size:12px;color:var(--muted);">0 of 6 lessons marked complete</span></div>
+                            <div><strong>Complete all course lessons</strong><br/><span id="req-lessons-txt" style="font-size:12px;color:var(--muted);">0 of 5 lessons marked complete</span></div>
                         </li>
                         <li class="req-li">
                             <div class="req-ico pend" id="req-quiz-ico"><i class="fa-solid fa-check"></i></div>
@@ -775,11 +730,11 @@ lo, hi = <span class="fn">min_max</span>([<span class="nm">3</span>, <span class
                     <div class="cert-ul-header">
                         <div class="cert-ul-icon"><i class="fa-solid fa-award"></i></div>
                         <h2>Certificate Earned</h2>
-                        <p>Introduction to Python Programming &mdash; NetGuard</p>
+                        <p>Cybersecurity Basics &mdash; NetGuard</p>
                     </div>
                     <div class="cert-ul-body">
                         <div class="cert-score-b"><i class="fa-solid fa-circle-check"></i> All Requirements Completed</div>
-                        <p>You have completed all course lessons and passed the assessment. Your official NetGuard Python Programming certificate is ready.</p>
+                        <p>You have completed all course lessons and passed the assessment. Your official NetGuard Cybersecurity Basics certificate is ready.</p>
                         <button type="button" class="cert-get" onclick="launchPage('cert')"><i class="fa-solid fa-download"></i> Download Certificate</button>
                     </div>
                 </div>
@@ -800,13 +755,13 @@ var courseID = '<%= Request.QueryString["CourseID"] ?? "" %>';
 var username = '<%= Session["Username"] ?? "guest" %>';
 var userType = '<%= Session["UserType"] ?? "Member" %>';
 
-var LESSONS_ORDER = ['notes','vars','flow','func','labs','quiz','disc','feedback','cert'];
-var TRACKABLE     = ['notes','vars','flow','func','labs','quiz','disc'];
+var LESSONS_ORDER = ['intro','auth','best','labs','quiz','disc','feedback','cert'];
+var TRACKABLE     = ['intro','auth','best','labs','quiz','disc'];
 var PAGES         = { labs:'VirtualLabs.aspx', feedback:'Feedback.aspx', cert:'Certificates.aspx' };
-var TITLES        = { notes:'1.0: Introduction &amp; Setup', vars:'1.1: Variables &amp; Data Types', flow:'1.2: Control Flow &amp; Loops', func:'1.3: Functions &amp; Modules', labs:'2.0: Virtual Lab &mdash; Python IDE', quiz:'2.1: Self-Assessment Quiz', disc:'2.2: Discussion Forum', feedback:'Course Feedback', cert:'Course Certificate' };
+var TITLES        = { intro:'1.0: Foundations &amp; Threats', auth:'1.1: Authentication &amp; Encryption', best:'1.2: Security Best Practices', labs:'2.0: Interactive Sandbox &mdash; Security Labs', quiz:'2.1: Self-Assessment Quiz', disc:'2.2: Discussion Forum', feedback:'Course Feedback', cert:'Course Certificate' };
 
 var state = { lessons:{}, quizPassed:false, quizAttempts:0, bestScore:null, lastScore:null, lastAnswers:[], discussions:[] };
-var currentKey = 'notes';
+var currentKey = 'intro';
 
 /* ════════════════════
    INIT: load from server
@@ -829,8 +784,8 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCertSidebar();
         updateAttemptBar();
         loadDiscussion();
-        var start = (localStorage.getItem('ng_last_'+username+'_'+courseID) || 'notes');
-        if (!document.getElementById('li-'+start)) start = 'notes';
+        var start = (localStorage.getItem('ng_last_'+username+'_'+courseID) || 'intro');
+        if (!document.getElementById('li-'+start)) start = 'intro';
         switchLesson(document.getElementById('li-'+start), start, true);
     });
 });
@@ -899,7 +854,7 @@ function switchLesson(el, key, silent) {
     updateMcButton();
 
     // Show correct panel
-    var allP = ['notes','vars','flow','func','labs','quiz','disc','feedback','cert-locked','cert-unlocked'];
+    var allP = ['intro','auth','best','labs','quiz','disc','feedback','cert-locked','cert-unlocked'];
     allP.forEach(function(p){ var x=document.getElementById('panel-'+p); if(x) x.style.display='none'; });
 
     if (key === 'cert') {
@@ -977,8 +932,8 @@ function updateProgress() {
     tc.textContent = done+' of '+TRACKABLE.length+' completed';
     tc.className   = 'tb-comp'+(done===TRACKABLE.length?' done':'');
 
-    var m1 = ['notes','vars','flow','func']; document.getElementById('m1c').textContent = m1.filter(function(k){ return state.lessons[k]==='complete'; }).length+' / '+m1.length;
-    var m2 = ['labs','quiz','disc'];         document.getElementById('m2c').textContent = m2.filter(function(k){ return state.lessons[k]==='complete'; }).length+' / '+m2.length;
+    var m1 = ['intro','auth','best']; document.getElementById('m1c').textContent = m1.filter(function(k){ return state.lessons[k]==='complete'; }).length+' / '+m1.length;
+    var m2 = ['labs','quiz','disc'];  document.getElementById('m2c').textContent = m2.filter(function(k){ return state.lessons[k]==='complete'; }).length+' / '+m2.length;
 
     // Cert requirements
     var nonQuiz = TRACKABLE.filter(function(k){ return k!=='quiz'; });
@@ -1036,50 +991,53 @@ function hideToast() {
    TOPBAR MC BUTTON
 ═════════════════════ */
 var NO_AUTO_COMPLETE = ['quiz','labs','feedback','cert'];
-function updateMcButton() {}   // no-op — button removed
-function markCurrentComplete() {}   // no-op
+function updateMcButton() {}
+function markCurrentComplete() {}
 
 /* Auto-complete on scroll to bottom */
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('mainScroll').addEventListener('scroll', function() {
-        var el = this;
-        var atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 30;
-        if (atBottom && NO_AUTO_COMPLETE.indexOf(currentKey) === -1
-                     && TRACKABLE.indexOf(currentKey) !== -1
-                     && state.lessons[currentKey] !== 'complete') {
-            markComplete(currentKey);
-        }
-    });
+    var scrollArea = document.getElementById('mainScroll');
+    if (scrollArea) {
+        scrollArea.addEventListener('scroll', function() {
+            var el = this;
+            var atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 30;
+            if (atBottom && NO_AUTO_COMPLETE.indexOf(currentKey) === -1
+                         && TRACKABLE.indexOf(currentKey) !== -1
+                         && state.lessons[currentKey] !== 'complete') {
+                markComplete(currentKey);
+            }
+        });
+    }
 });
 
 /* ════════════════════
    QUIZ ENGINE
 ═════════════════════ */
 var questions = [
-    { q:'Who created the Python programming language?',
-      opts:['Dennis Ritchie','Guido van Rossum','James Gosling','Linus Torvalds'], ans:1,
-      exp:'Python was created by <strong>Guido van Rossum</strong> in 1991. Dennis Ritchie created C, James Gosling created Java, and Linus Torvalds created the Linux kernel.' },
-    { q:'Which is the correct way to declare a variable in Python?',
-      opts:['int x = 10','var x = 10','x = 10','declare x = 10'], ans:2,
-      exp:'Python uses <strong>dynamic typing</strong> &mdash; you simply write <code>x = 10</code>. Unlike Java or C#, you do not declare the type. Keywords like <code>int</code>, <code>var</code>, or <code>declare</code> are not used for variable declarations in Python.' },
-    { q:'What does the print() function do in Python?',
-      opts:['Saves data to a file','Outputs text to the console','Creates a new variable','Imports a module'], ans:1,
-      exp:'<code>print()</code> outputs data to the <strong>standard output (console)</strong>. It does not save to files (use <code>open()</code>), create variables, or import modules. It is the most common debugging and output tool in Python.' },
-    { q:'Which symbol is used for single-line comments in Python?',
-      opts:['//','/* */','#','--'], ans:2,
-      exp:'Python uses <strong>#</strong> for single-line comments. The <code>//</code> symbol is used in JavaScript/C++, <code>/* */</code> is a multi-line comment in C/Java, and <code>--</code> is used in SQL and Lua.' },
-    { q:'What is the correct syntax for an if statement in Python?',
-      opts:['if (x > 0) { }','if x > 0:','if x > 0 then','IF x > 0 END IF'], ans:1,
-      exp:'Python if statements use the syntax <strong><code>if condition:</code></strong> followed by an indented block. Parentheses are optional, curly braces are not used, the keyword <code>then</code> does not exist in Python, and Python is case-sensitive (no uppercase keywords like <code>IF/END IF</code>).' },
-    { q:'Which data type stores True or False values?',
-      opts:['int','str','float','bool'], ans:3,
-      exp:'The <strong><code>bool</code></strong> (boolean) data type stores only <code>True</code> or <code>False</code>. While Python can represent booleans as integers internally (True=1, False=0), the correct data type name is <code>bool</code>.' },
-    { q:'What does range(5) produce when used in a for loop?',
-      opts:['1, 2, 3, 4, 5','0, 1, 2, 3, 4','0, 1, 2, 3, 4, 5','Five random numbers'], ans:1,
-      exp:'<code>range(5)</code> generates numbers <strong>starting from 0 up to but not including 5</strong>: 0, 1, 2, 3, 4. It is zero-indexed. To get 1&ndash;5, use <code>range(1, 6)</code>. It does not generate random numbers &mdash; use the <code>random</code> module for that.' },
-    { q:'How do you define a function in Python?',
-      opts:['function myFunc():','def myFunc():','create myFunc():','func myFunc():'], ans:1,
-      exp:'Python uses the <strong><code>def</code></strong> keyword to define functions: <code>def myFunc():</code>. The keyword <code>function</code> is used in JavaScript, <code>create</code> is not a Python keyword, and <code>func</code> is used in Go and Swift &mdash; not Python.' }
+    { q:'What is the primary purpose of a firewall?',
+      opts:['To prevent physical theft of servers','To monitor and control incoming and outgoing network traffic','To speed up the internet connection','To encrypt passwords'], ans:1,
+      exp:'A firewall monitors and controls network traffic based on predetermined security rules, acting as a barrier between trusted and untrusted networks.' },
+    { q:'Which of the following is an example of a Social Engineering attack?',
+      opts:['SQL Injection','Phishing','DDoS','Cross-Site Scripting (XSS)'], ans:1,
+      exp:'Phishing relies on human deception to steal sensitive information, making it a classic social engineering attack.' },
+    { q:'What does \'HTTPS\' stand for?',
+      opts:['HyperText Transfer Protocol Secure','HyperText Transmission Protocol System','Hyperlink Transfer Technology Protocol','HyperText Transfer Protocol Standard'], ans:0,
+      exp:'HTTPS stands for HyperText Transfer Protocol Secure. It encrypts communication between the browser and the web server.' },
+    { q:'Which type of malware is designed to demand payment in exchange for restoring access to data?',
+      opts:['Spyware','Adware','Ransomware','Trojan'], ans:2,
+      exp:'Ransomware encrypts a victim\'s files and demands a ransom payment (usually in cryptocurrency) to unlock them.' },
+    { q:'What is a \'Zero-Day\' vulnerability?',
+      opts:['A vulnerability that has been fixed','A software bug known to the vendor but without a patch yet','A computer with zero viruses','A network with no firewalls'], ans:1,
+      exp:'A Zero-Day vulnerability is an unpatched software flaw that is unknown to the vendor, leaving zero days to fix it before it might be exploited.' },
+    { q:'What are the three core pillars of the CIA Triad in cybersecurity?',
+      opts:['Control, Integrity, Access','Confidentiality, Identity, Authentication','Confidentiality, Integrity, Availability','Computer, Internet, Application'], ans:2,
+      exp:'The CIA Triad stands for Confidentiality, Integrity, and Availability. These are the core goals of any information security program.' },
+    { q:'Which of the following statements is true regarding symmetric encryption?',
+      opts:['It uses two different keys for encryption and decryption','It is slower than asymmetric encryption','It uses the same single key for both encryption and decryption','It is primarily used for secure key exchanges'], ans:2,
+      exp:'Symmetric encryption uses a single, shared secret key to both encrypt and decrypt data, making it faster and more suitable for bulk data.' },
+    { q:'What is the Principle of Least Privilege?',
+      opts:['Giving users access to all network resources by default','Limiting user access to only the minimum resources needed to perform their job','Using the shortest possible passwords for convenience','Restricting internet access to zero websites'], ans:1,
+      exp:'The Principle of Least Privilege dictates that users and systems should only have the minimum access rights required to perform their specific functions, minimizing damage from compromised accounts.' }
 ];
 
 var qIdx=0, qCorrect=0, qSkipped=0, qAnswers=[];
@@ -1127,7 +1085,6 @@ function updateAttemptBar() {
         var dot = document.getElementById('dot'+i);
         dot.className = 'qa-dot';
         if (i <= used) {
-            // Was this attempt a pass? Only last attempt could be pass
             dot.classList.add((state.quizPassed && i===used) ? 'used-pass' : 'used-fail');
         } else if (!state.quizPassed && i===used+1 && used<3) {
             dot.classList.add('current');
@@ -1262,7 +1219,7 @@ function renderResultUI(answers, pct, passed, attemptNum) {
     badge.innerHTML=(passed?'<i class="fa-solid fa-circle-check"></i> PASSED':'<i class="fa-solid fa-circle-xmark"></i> NOT PASSED');
 
     var msgs={
-        pass: 'Excellent! You scored '+pct+'% and passed the Python assessment. Your certificate is now unlocked.',
+        pass: 'Excellent! You scored '+pct+'% and passed the Cybersecurity assessment. Your certificate is now unlocked.',
         mid:  'You scored '+pct+'%. You need 80% to pass. Review the lessons below and try again.',
         low:  'You scored '+pct+'%. Study the course material carefully &mdash; focus on the areas where you made mistakes.'
     };
@@ -1362,13 +1319,13 @@ function loadDiscussion() {
         var msgTime = p.date || p.time || 'Just now';
         var msgType = p.userType || 'Member';
         
-        var isDefault = ['jamie r.', 'sam p.', 'maya k.', 'chris l.', 'lina', 'admin'].indexOf(msgUser.toLowerCase()) !== -1 
-                        && (msgText.indexOf('difference between') !== -1 
-                            || msgText.indexOf('mutable') !== -1 
-                            || msgText.indexOf('REPL') !== -1 
-                            || msgText.indexOf('F-strings') !== -1 
-                            || msgText.indexOf('IndentationError') !== -1 
-                            || msgText.indexOf('IndentationErrors') !== -1);
+        var isDefault = ['alex', 'lina', 'admin', 'sam p.', 'daniel'].indexOf(msgUser.toLowerCase()) !== -1 
+                        && (msgText.indexOf('Welcome to the') !== -1 
+                            || msgText.indexOf('symmetric and asymmetric') !== -1 
+                            || msgText.indexOf('Symmetric encryption') !== -1 
+                            || msgText.indexOf('Multi-Factor') !== -1 
+                            || msgText.indexOf('MD5') !== -1 
+                            || msgText.indexOf('MD5 is cryptographically') !== -1);
                             
         if (!isDefault) {
             formattedUserPosts.push({ username: msgUser, msg: msgText, date: msgTime, userType: msgType });
@@ -1377,29 +1334,30 @@ function loadDiscussion() {
 
     document.querySelectorAll('#panel-disc .dpost').forEach(function(el){ el.remove(); });
 
-    // Render Default Python Comments
-    _appendDiscPost('Jamie R.', 'Hey! I\'m struggling to understand the difference between a <code>list</code> and a <code>tuple</code>. Can anyone help?', '2 hours ago', 'Member', true);
+    // Render Default Cybersecurity Comments
+    _appendDiscPost('Alex', 'Welcome to the Cybersecurity Basics discussion forum! Let\'s use this space to ask questions about threats and defense strategies.', '2 hours ago', 'Member', true);
+
+    _appendDiscPost('Lina', 'Does anyone have a good explanation of the difference between symmetric and asymmetric encryption?', '5 hours ago', 'Member', true);
     var posts = document.querySelectorAll('#panel-disc .dpost');
     var lastPost = posts[posts.length - 1];
     if (lastPost) {
         var reps = document.createElement('div');
         reps.className = 'preps';
-        reps.innerHTML = '<div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#f59e0b,#d97706);">SP</div><div class="rbub"><div class="ra">Sam P. &middot; 1 hour ago</div><p>A <code>list</code> is <strong>mutable</strong> (changeable after creation), a <code>tuple</code> is <strong>immutable</strong> (fixed). Use list for changing data: <code>colors = ["red","blue"]</code>. Use tuple for fixed data: <code>coords = (10, 20)</code>.</p></div></div>';
+        reps.innerHTML = '<div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">AD</div><div class="rbub"><div class="ra">admin <span style="background:#dbeafe;color:#1e40af;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700;">STAFF</span> &middot; 4 hours ago</div><p>Sure Lina! Symmetric encryption uses the same key for both encryption and decryption, whereas asymmetric encryption uses a public-private key pair.</p></div></div>';
         lastPost.appendChild(reps);
     }
 
-    _appendDiscPost('Lina', 'Why do I get an IndentationError in Python? The lines look completely aligned in my editor.', '25 minutes ago', 'Member', true);
+    _appendDiscPost('Sam P.', 'Remember: Multi-Factor Authentication (MFA) adds an extra verification layer. Even if someone steals your password, they can\'t access your account without your secondary device or biometrics!', 'Yesterday', 'Member', true);
+
+    _appendDiscPost('Daniel', 'Is it secure to store user passwords in a database using MD5 hashing?', '30 minutes ago', 'Member', true);
     var posts2 = document.querySelectorAll('#panel-disc .dpost');
     var lastPost2 = posts2[posts2.length - 1];
     if (lastPost2) {
         var reps = document.createElement('div');
         reps.className = 'preps';
-        reps.innerHTML = '<div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">AD</div><div class="rbub"><div class="ra">admin <span style="background:#dbeafe;color:#1e40af;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700;">STAFF</span> &middot; 10 minutes ago</div><p>IndentationErrors are usually caused by mixing tabs and spaces in your code. Python treats tabs and spaces differently. Configure your code editor to insert spaces when you press Tab!</p></div></div>';
+        reps.innerHTML = '<div class="rrow"><div class="rav" style="background:linear-gradient(135deg,#0099ff,#007acc);">AD</div><div class="rbub"><div class="ra">admin <span style="background:#dbeafe;color:#1e40af;font-size:10px;padding:1px 6px;border-radius:10px;margin-left:4px;font-weight:700;">STAFF</span> &middot; 15 minutes ago</div><p>No, MD5 is cryptographically broken and highly vulnerable to collision attacks and brute-forcing. Always use secure, modern salted algorithms like bcrypt or PBKDF2.</p></div></div>';
         lastPost2.appendChild(reps);
     }
-
-    _appendDiscPost('Maya K.', 'Pro tip: use the Python REPL (type <code>python</code> in terminal) to test snippets instantly without creating a file. It\'s like a calculator for Python!', '5 hours ago', 'Member', true);
-    _appendDiscPost('Chris L.', 'F-strings are incredibly powerful. You can put expressions inside: <code>print(f"2+2={2+2}")</code> outputs <code>2+2=4</code>. Much cleaner than old string formatting!', 'Yesterday', 'Member', true);
 
     // Render User Posts
     formattedUserPosts.forEach(function(entry){
@@ -1440,40 +1398,40 @@ function submitPost() {
 ═════════════════════ */
 var labExercises = [
     {
-        q: 'Write a Python statement that prints the text: Welcome to NetGuard!',
-        hint: 'Hint: use the print() function with a string inside quotes.',
-        answer: 'print("Welcome to NetGuard!")',
-        exp: '<code>print()</code> outputs text to the console. String values must be wrapped in quotes &mdash; single or double both work.'
+        q: 'Identify the suspicious/phishing domain in this list: secure-netguard.com, netguard.com, netguard-secure-login.net, portal.netguard.com. Enter the phishing domain name.',
+        hint: 'Hint: Phishing domains often use typosquatting or add extra words (e.g. netguard-secure-login.net). Subdomains like portal.netguard.com are secure.',
+        answer: 'netguard-secure-login.net',
+        exp: 'Phishing domains mimic legitimate companies by adding hyphenated words or altering spelling to deceive targets.'
     },
     {
-        q: 'Create two variables: name = "Alice" and age = 25. Then print them on one line using an f-string.',
-        hint: 'Hint: f-strings use the f"..." syntax. Put variable names inside { } curly braces.',
-        answer: 'name = "Alice"\nage = 25\nprint(f"Name: {name}, Age: {age}")',
-        exp: 'Variables are assigned with <code>=</code>. F-strings embed variable values directly in a string using <code>{variable_name}</code>. Output: <code>Name: Alice, Age: 25</code>.'
+        q: 'Write a firewall rule command to block all inbound traffic from IP 198.51.100.45. Use format: DROP inbound from 198.51.100.45',
+        hint: 'Hint: Enter the command exactly as: DROP inbound from 198.51.100.45',
+        answer: 'DROP inbound from 198.51.100.45',
+        exp: 'Firewall rules define block/allow behaviors. Restricting specific malicious IPs cuts off network access from attackers.'
     },
     {
-        q: 'Set score = 82. Write an if/elif/else block: print "A" if score >= 90, "B" if score >= 75, otherwise print "F".',
-        hint: 'Hint: use if / elif / else keywords. Indent each block with 4 spaces.',
-        answer: 'score = 82\nif score >= 90:\n    print("A")\nelif score >= 75:\n    print("B")\nelse:\n    print("F")',
-        exp: '<code>if</code> checks the first condition, <code>elif</code> adds more branches, <code>else</code> is the fallback. Python requires <strong>indentation</strong> (4 spaces) &mdash; no curly braces. Output: <code>B</code>.'
+        q: 'Implement a simple symmetric encryption. Write a Python function encrypt(char, key) that returns the character XORed with the key. Hint: use chr(ord(char) ^ key)',
+        hint: 'Hint: def encrypt(char, key):\n    return chr(ord(char) ^ key)',
+        answer: 'def encrypt(char, key):\n    return chr(ord(char) ^ key)',
+        exp: 'XOR symmetric encryption is easily reversible: applying key XOR to the ciphertext returns the plaintext.'
     },
     {
-        q: 'Write a for loop that prints the numbers 1 through 5 inclusive, one per line.',
-        hint: 'Hint: range(1, 6) generates 1, 2, 3, 4, 5 - the stop value is excluded.',
-        answer: 'for i in range(1, 6):\n    print(i)',
-        exp: '<code>range(start, stop)</code> generates numbers from <code>start</code> up to but <em>not including</em> <code>stop</code>. So <code>range(1, 6)</code> &rarr; 1 2 3 4 5.'
+        q: 'An attacker modifies a database record to change their account balance. Which pillar of the CIA Triad has been violated? (Confidentiality, Integrity, or Availability)',
+        hint: 'Hint: Enter either Confidentiality, Integrity, or Availability.',
+        answer: 'Integrity',
+        exp: 'Integrity guarantees data remains accurate, complete, and free from unauthorized modifications.'
     },
     {
-        q: 'Write a while loop that starts count at 0, prints count while count <= 3, and increments count each iteration.',
-        hint: 'Hint: don\'t forget count += 1 inside the loop or it will run forever.',
-        answer: 'count = 0\nwhile count <= 3:\n    print(count)\n    count += 1',
-        exp: '<code>while</code> runs as long as the condition is <code>True</code>. <code>count += 1</code> is shorthand for <code>count = count + 1</code>. Output: 0, 1, 2, 3.'
+        q: 'Write a Python condition that checks if a password is valid: length at least 8, and contains a digit. Write the function is_secure(pwd) using any(c.isdigit() for c in pwd) and len(pwd) >= 8 returning True or False.',
+        hint: 'Hint: def is_secure(pwd):\n    return len(pwd) >= 8 and any(c.isdigit() for c in pwd)',
+        answer: 'def is_secure(pwd):\n    return len(pwd) >= 8 and any(c.isdigit() for c in pwd)',
+        exp: 'Checking length and character classes enforces password complexity policy checks during setup.'
     },
     {
-        q: 'Define a function called add that takes two parameters (a and b) and returns their sum. Call it with 3 and 7 and print the result.',
-        hint: 'Hint: use def to define the function, return to send back the result.',
-        answer: 'def add(a, b):\n    return a + b\n\nprint(add(3, 7))',
-        exp: 'Functions are defined with <code>def name(params):</code> and use <code>return</code> to output a value. The function must be defined before it is called. Output: <code>10</code>.'
+        q: 'Write a statement to check if the file hash file_hash matches expected_hash. Print "Secure" if they match, else "Tampered".',
+        hint: 'Hint: Use if/else conditions. Indent each print statement with 4 spaces.',
+        answer: 'if file_hash == expected_hash:\n    print("Secure")\nelse:\n    print("Tampered")',
+        exp: 'Hash verification compares file integrity. Changing a single character alters the output signature completely.'
     }
 ];
 
@@ -1507,7 +1465,7 @@ function renderLabEx() {
     var area = document.getElementById('labCodeArea');
     area.value = '';
     area.disabled = false;
-    area.placeholder = '# Type your Python code here...';
+    area.placeholder = '# Type your answer here...';
     area.focus();
 
     document.getElementById('labStatus').style.display = 'none';
@@ -1553,16 +1511,19 @@ function checkLabAnswer() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('labCodeArea').addEventListener('input', function() {
-        if (labPhase !== 'wrong') return;
-        if (labNorm(this.value) === labNorm(labExercises[labIdx].answer)) {
-            document.getElementById('labNextBtn').style.display = '';
-            document.getElementById('labRetypeTxt').innerHTML = '<strong style="color:var(--green-d);">&#10003; Correct — click Next to continue.</strong>';
-        } else {
-            document.getElementById('labNextBtn').style.display = 'none';
-            document.getElementById('labRetypeTxt').textContent = 'Now type the correct answer above to continue.';
-        }
-    });
+    var area = document.getElementById('labCodeArea');
+    if (area) {
+        area.addEventListener('input', function() {
+            if (labPhase !== 'wrong') return;
+            if (labNorm(this.value) === labNorm(labExercises[labIdx].answer)) {
+                document.getElementById('labNextBtn').style.display = '';
+                document.getElementById('labRetypeTxt').innerHTML = '<strong style="color:var(--green-d);">&#10003; Correct — click Next to continue.</strong>';
+            } else {
+                document.getElementById('labNextBtn').style.display = 'none';
+                document.getElementById('labRetypeTxt').textContent = 'Now type the correct answer above to continue.';
+            }
+        });
+    }
     initLab();
 });
 
@@ -1615,9 +1576,9 @@ function doReset() {
     // 4. Refresh all UI with blank state
     applyAllStatuses(); updateProgress(); updateCertSidebar(); updateAttemptBar();
     closeUserMenu();
-    switchLesson(document.getElementById('li-notes'), 'notes');
+    switchLesson(document.getElementById('li-intro'), 'intro');
 
-    // 5. Best-effort server delete (fire and forget — reload not needed)
+    // 5. Best-effort server delete
     fetch('ProgressHandler.ashx?action=resetProgress', {
         method:'POST', headers:{'Content-Type':'application/json'},
         body: JSON.stringify({ courseID: courseID })

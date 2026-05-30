@@ -103,6 +103,9 @@
     <Content Include="Web.config" />
     <Content Include="MemberDashboard.aspx" />
     <Content Include="Feedback.aspx" />
+    <Content Include="ProgressHandler.ashx" />
+    <Content Include="CyberSecurityPage.aspx" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDashboard.aspx.cs">
@@ -245,6 +248,23 @@
     </Compile>
     <Compile Include="VirtualLabs.aspx.designer.cs">
       <DependentUpon>VirtualLabs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressHandler.ashx.cs">
+      <DependentUpon>ProgressHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CyberSecurityPage.aspx.cs">
+      <DependentUpon>CyberSecurityPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CyberSecurityPage.aspx.designer.cs">
+      <DependentUpon>CyberSecurityPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

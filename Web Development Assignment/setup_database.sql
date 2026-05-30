@@ -179,5 +179,14 @@ INSERT INTO FAQs (Question, Answer, Category) VALUES
 INSERT INTO Discussions (CourseID, Username, Message, DatePosted) VALUES
 (1, 'alex', 'Welcome to the Cybersecurity Basics discussion forum! Let''s use this space to ask questions about threats and defense strategies.', GETDATE()),
 (1, 'lina', 'Does anyone have a good explanation of the difference between symmetric and asymmetric encryption?', GETDATE()),
-(1, 'admin', 'Sure Lina! Symmetric encryption uses the same key for both encryption and decryption, whereas asymmetric encryption uses a public-private key pair.', GETDATE());
+(1, 'admin', 'Sure Lina! Symmetric encryption uses the same key for both encryption and decryption, whereas asymmetric encryption uses a public-private key pair.', GETDATE()),
+(1, 'sam p.', 'Remember: Multi-Factor Authentication (MFA) adds an extra verification layer. Even if someone steals your password, they can''t access your account without your secondary device or biometrics!', GETDATE()),
+(1, 'daniel', 'Is it secure to store user passwords in a database using MD5 hashing?', GETDATE()),
+(1, 'admin', 'No, MD5 is cryptographically broken and highly vulnerable to collision attacks and brute-forcing. Always use secure, modern salted algorithms like bcrypt or PBKDF2.', GETDATE()),
+(5, 'jamie r.', 'Hey! I''m struggling to understand the difference between a list and a tuple. Can anyone help?', GETDATE()),
+(5, 'sam p.', 'A list is mutable (changeable after creation), a tuple is immutable (fixed). Use list for changing data: colors = ["red","blue"]. Use tuple for fixed data: coords = (10, 20).', GETDATE()),
+(5, 'maya k.', 'Pro tip: use the Python REPL (type python in terminal) to test snippets instantly without creating a file. It''s like a calculator for Python!', GETDATE()),
+(5, 'chris l.', 'F-strings are incredibly powerful. You can put expressions inside: print(f"2+2={2+2}") outputs 2+2=4. Much cleaner than old string formatting!', GETDATE()),
+(5, 'lina', 'Why do I get an IndentationError in Python? The lines look completely aligned in my editor.', GETDATE()),
+(5, 'admin', 'IndentationErrors are usually caused by mixing tabs and spaces in your code. Python treats tabs and spaces differently. Configure your code editor to insert spaces when you press Tab!', GETDATE());
 GO

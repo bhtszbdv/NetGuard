@@ -3,119 +3,236 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Virtual Labs</title>
+    <title>Virtual Labs - NetGuard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #2b2b2b;
-            color: #f1f1f1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            background: #f5f7fa;
+            color: #333;
         }
+
+        .header {
+            background: #0099ff;
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,153,255,0.3);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .back-button {
+            background: white;
+            color: #0099ff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .back-button:hover {
+            background: #e6f3ff;
+        }
+
+        .header-brand {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
         .container {
             max-width: 900px;
-            margin: auto;
-            background-color: #3b3b3b;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin: 35px auto;
+            padding: 0 20px;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #00ff00;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+
+        .page-intro {
+            background: white;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 5px solid #0099ff;
         }
-        .header h2 {
+
+        .page-intro h2 {
+            margin: 0 0 6px 0;
+            color: #0099ff;
+            font-size: 20px;
+        }
+
+        .page-intro p {
             margin: 0;
-            color: #00ff00;
-        }
-        .btn-back {
-            background-color: #555;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn-back:hover { background-color: #777; }
-        
-        .lab-card {
-            background-color: #1e1e1e;
-            border: 1px solid #444;
-            border-left: 5px solid #00ff00;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .lab-info h3 {
-            margin: 0 0 5px 0;
-            color: #00ff00;
-        }
-        .lab-info p {
-            margin: 0;
-            color: #ccc;
+            color: #666;
             font-size: 14px;
         }
+
+        .lab-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .lab-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 5px solid #0099ff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .lab-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #111827, #1f2937);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0099ff;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .lab-info {
+            flex-grow: 1;
+        }
+
+        .lab-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0 0 5px 0;
+        }
+
+        .lab-desc {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 0;
+        }
+
         .btn-launch {
-            background-color: #0099ff;
+            background: linear-gradient(135deg, #0099ff, #007acc);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
             cursor: pointer;
-            font-weight: bold;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s, transform 0.2s;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,153,255,0.3);
         }
+
         .btn-launch:hover {
-            background-color: #007acc;
+            opacity: 0.9;
+            transform: translateY(-1px);
         }
-        .empty-message {
+
+        .empty-state {
+            background: white;
+            border-radius: 12px;
+            padding: 60px 30px;
             text-align: center;
-            padding: 30px;
-            color: #999;
-            font-size: 16px;
-            font-style: italic;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 2px dashed #e5e7eb;
+        }
+
+        .empty-state i {
+            font-size: 50px;
+            color: #d1d5db;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .empty-state h3 {
+            color: #6b7280;
+            margin: 0 0 8px 0;
+        }
+
+        .empty-state p {
+            color: #9ca3af;
+            margin: 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="header">
+            <div class="header-left">
+                <asp:Button ID="btnBack" runat="server" Text="← Back to Course" CssClass="back-button" OnClick="btnBack_Click" CausesValidation="false" />
+                <span class="header-title">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <asp:Label ID="lblCourseTitle" runat="server" Text="Virtual Labs"></asp:Label>
+                </span>
+            </div>
+            <span class="header-brand"><i class="fa-solid fa-shield-halved"></i> NetGuard Learning</span>
+        </div>
+
         <div class="container">
-            <div class="header">
-                <h2>
-                    <asp:Label ID="lblCourseTitle" runat="server" Text="Virtual Labs Environment"></asp:Label>
-                </h2>
-                <asp:Button ID="btnBack" runat="server" Text="Back to Course" CssClass="btn-back" OnClick="btnBack_Click" />
+            <div class="page-intro">
+                <h2><i class="fa-solid fa-flask"></i> Hands-On Lab Environment</h2>
+                <p>Welcome to the secure sandbox environment. These virtual labs provide hands-on cybersecurity experience without risking your personal machine.</p>
             </div>
 
-            <p style="color: #aaa; margin-bottom: 25px;">
-                Welcome to the secure sandbox environment. These virtual labs provide hands-on experience without risking your personal machine.
-            </p>
-
-            <asp:Repeater ID="rptLabs" runat="server">
-                <ItemTemplate>
-                    <div class="lab-card">
-                        <div class="lab-info">
-                            <h3><%# Eval("LabTitle") %></h3>
-                            <p><%# Eval("Description") %></p>
+            <div class="lab-list">
+                <asp:Repeater ID="rptLabs" runat="server">
+                    <ItemTemplate>
+                        <div class="lab-card">
+                            <div class="lab-icon">
+                                <i class="fa-solid fa-terminal"></i>
+                            </div>
+                            <div class="lab-info">
+                                <p class="lab-title"><%# Eval("LabTitle") %></p>
+                                <p class="lab-desc"><%# Eval("Description") %></p>
+                            </div>
+                            <a href='<%# Eval("LabLink") %>' target="_blank" class="btn-launch">
+                                <i class="fa-solid fa-play"></i> Launch Lab
+                            </a>
                         </div>
-                        <div>
-                            <!-- Link to external lab environment or simulation -->
-                            <a href='<%# Eval("LabLink") %>' target="_blank" class="btn-launch">Launch Lab</a>
-                        </div>
-                    </div>
-                </ItemTemplate>
-            </asp:Repeater>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
 
-            <asp:Panel ID="pnlNoLabs" runat="server" Visible="false" CssClass="empty-message">
-                <p>No virtual labs are currently available for this module.</p>
+            <asp:Panel ID="pnlNoLabs" runat="server" Visible="false">
+                <div class="empty-state">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h3>No Labs Available</h3>
+                    <p>No virtual labs are currently available for this module.</p>
+                </div>
             </asp:Panel>
         </div>
     </form>

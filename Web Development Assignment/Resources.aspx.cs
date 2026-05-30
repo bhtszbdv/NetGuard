@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Web_Development_Assignment
 {
@@ -13,45 +8,69 @@ namespace Web_Development_Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
                 LoadResources();
             }
-
         }
-        void LoadResources()
+
+        private void LoadResources()
         {
             string courseID = Request.QueryString["CourseID"];
 
-            if (courseID == null)
+            if (string.IsNullOrEmpty(courseID))
             {
-                Response.Write("CourseID not found.");
+                pnlEmpty.Visible = true;
                 return;
             }
 
-            string connStr =
-                ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+            string connStr = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 
-            SqlConnection conn = new SqlConnection(connStr);
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                string query = "SELECT Title, Description, FilePath FROM Resources WHERE CourseID = @CourseID";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@CourseID", courseID);
+                    try
+                    {
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            rptResources.DataSource = reader;
+                            rptResources.DataBind();
+                        }
 
-            string query =
-                "SELECT Title, Description, FilePath " +
-                "FROM Resources " +
-                "WHERE CourseID=@CourseID";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-
-            cmd.Parameters.AddWithValue("@CourseID", courseID);
-
-            conn.Open();
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            rptResources.DataSource = reader;
-            rptResources.DataBind();
-
-            conn.Close();
+                        if (rptResources.Items.Count == 0)
+                        {
+                            pnlEmpty.Visible = true;
+                        }
+                    }
+                    catch
+                    {
+                        pnlEmpty.Visible = true;
+                    }
+                }
+            }
         }
 
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            string courseId = Request.QueryString["CourseID"];
+            if (!string.IsNullOrEmpty(courseId))
+            {
+                Response.Redirect("CoursePage.aspx?CourseID=" + courseId);
+            }
+            else
+            {
+                Response.Redirect("MemberDashboard.aspx");
+            }
+        }
     }
 }
